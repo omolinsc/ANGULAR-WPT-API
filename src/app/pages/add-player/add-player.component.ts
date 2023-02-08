@@ -1,8 +1,8 @@
-import { Router, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 import { IPlayer } from './../../interface/iplayer';
 import { ApiService } from './../../shared/services/api.service';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-add-player',
@@ -20,8 +20,7 @@ export class AddPlayerComponent implements OnInit{
 
   ngOnInit(): void {
 
-    // this.maxID = this.api.setMaxID()
-    // console.log(this.maxID)
+    console.log(this.maxID)
 
     this.api.getPlayers().subscribe((data:any) => {
       for (const player of data) {
@@ -31,11 +30,11 @@ export class AddPlayerComponent implements OnInit{
     })
 
     this.playerForm = this.form.group({
-      id: [{value: this.maxID + 1, disabled: true}, Validators.required],
+      id: [{value: (this.maxID + 1), disabled: true}, Validators.required],
       name: ["", [Validators.required, Validators.minLength(4)]],
-      nickname: "",
-      points: "",
-      position: ["drive", "revés"],
+      nickname: ["", [Validators.required]],
+      points: ["", [Validators.required]],
+      position: ["", [Validators.required]],
       birthPlace: ["", [Validators.required]],
       country: ["", [Validators.required]],
       birthDate: ["", [Validators.required]],
@@ -62,3 +61,17 @@ export class AddPlayerComponent implements OnInit{
   }
 
 }
+
+
+// this.playerForm = this.form.group({
+//   id: [{value: this.maxID + 1, disabled: true}, Validators.required],
+//   name: ["", [Validators.required, Validators.minLength(4)]],
+//   nickname: "",
+//   points: "",
+//   position: ["drive", "revés"],
+//   birthPlace: ["", [Validators.required]],
+//   country: ["", [Validators.required]],
+//   birthDate: ["", [Validators.required]],
+//   height: ["", [Validators.required, Validators.max(2.5), Validators.min(1)]],
+//   photo: ["", [Validators.required]]
+// })

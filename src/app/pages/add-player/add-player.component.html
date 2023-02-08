@@ -1,4 +1,41 @@
-<form [formGroup]="playerForm" (ngSubmit)="addPlayer()" *ngIf="maxID">
+<div class="container">
+<form [formGroup]="playerForm" (ngSubmit)="addPlayer()" *ngIf="maxID" class="formulary">
+    <div [formGroup]="playerForm">
+           <p>Nombre:</p><input type="text" #name formControlName="name"/>
+        </div>
+        <div [formGroup]="playerForm">
+            <p>Apodos:</p><input type="text" #nickname formControlName="nickname"/>
+        </div>
+        <div [formGroup]="playerForm">
+            <p>Puntos WPT:</p><input type="text" #points formControlName="points"/>
+        </div>
+        <div [formGroup]="playerForm">
+            <p>Posición:</p><select name="position" #position formControlName="position">
+                <option selected value="drive">Drive</option>
+                <option value="revés">Revés</option>
+            </select>
+        </div>
+        <div [formGroup]="playerForm">
+            <p>Lugar De Nacimiento:</p><input type="text" #birthPlace formControlName="birthPlace"/>
+        </div>
+        <div [formGroup]="playerForm">
+            <p>País:</p><input type="text" #country formControlName="country"/>
+        </div>
+        <div [formGroup]="playerForm">
+            <p>Fecha De Nacimiento:</p><input type="date" #birthDate formControlName="birthDate" placeholder="DD/MM/YYYY"/>
+        </div>
+        <div [formGroup]="playerForm">
+            <p>Altura:</p><input type="number" #height formControlName="height" placeholder="1.83" min="1" max="2.5" step="0.01"/>
+        </div>
+        <div [formGroup]="playerForm">
+            <p>Foto:</p><input type="url" #photo formControlName="photo"/>
+        </div>
+    <button>Crear Perfil</button>
+</form>
+</div>
+
+
+<!-- <form [formGroup]="playerForm" (ngSubmit)="addPlayer()" *ngIf="maxID">
     <fieldset [disabled]=true>
         <label for="ID">ID: </label>
         <input type="text" #ID formControlName="id" value={{maxID+1}}/>
@@ -44,7 +81,7 @@
     </fieldset>
     <button>Crear Perfil</button>
 
-</form>
+</form> -->
 
 
 
