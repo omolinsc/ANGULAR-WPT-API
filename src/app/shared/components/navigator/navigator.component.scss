@@ -1,0 +1,29 @@
+* {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 40px;
+    background-color: rgb(0, 23, 66);
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+a {
+    height: 60px;
+    transition: all 0.5s;
+    line-height: 60px;
+    
+    &:hover {
+        transition: all 0.5s;
+        box-shadow: inset 0px 8px 0px 0px white;
+    }
+}

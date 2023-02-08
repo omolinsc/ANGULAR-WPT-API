@@ -1,0 +1,77 @@
+<form [formGroup]="playerForm" (ngSubmit)="addPlayer()" *ngIf="maxID">
+    <fieldset [disabled]=true>
+        <label for="ID">ID: </label>
+        <input type="text" #ID formControlName="id" value={{maxID+1}}/>
+    </fieldset>
+    <fieldset>
+        <label for="name">Nombre: </label>
+        <input type="text" #name formControlName="name"/>
+    </fieldset>
+    <fieldset>
+        <label for="nickname">Apodos: </label>
+        <input type="text" #nickname formControlName="nickname"/>
+    </fieldset>
+    <fieldset>
+        <label for="points">Puntos WPT: </label>
+        <input type="text" #points formControlName="points"/>
+    </fieldset>
+    <fieldset>
+        <label for="position">Posición: </label>
+        <select name="position" #position formControlName="position">
+            <option selected value="drive">Drive</option>
+            <option value="revés">Revés</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <label for="birthPlace">Lugar de Nacimiento: </label>
+        <input type="text" #birthPlace formControlName="birthPlace"/>
+    </fieldset>
+    <fieldset>
+        <label for="country">País: </label>
+        <input type="text" #country formControlName="country"/>
+    </fieldset>
+    <fieldset>
+        <label for="birthDate">Fecha de Nacimiento: </label>
+        <input type="date" #birthDate formControlName="birthDate" placeholder="DD/MM/YYYY"/>
+    </fieldset>
+    <fieldset>
+        <label for="height">Altura: </label>
+        <input type="number" #height formControlName="height" placeholder="1.83m" min="1" max="2.5" step="0.01"/>
+    </fieldset>
+    <fieldset>
+        <label for="photo">Foto: </label>
+        <input type="url" #photo formControlName="photo"/>
+    </fieldset>
+    <button>Crear Perfil</button>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- this.playerForm = this.form.group({
+    id: this.maxID + 1,
+    name: ["", [Validators.required, Validators.minLength(4)]],
+    nickname: "",
+    points: "",
+    position: "",
+    birthPlace: ["", [Validators.required]],
+    country: ["", [Validators.required]],
+    birthDate: ["", [Validators.required]],
+    height: ["", [Validators.required]],
+    photo: ["", [Validators.required]]
+  }) -->

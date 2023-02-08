@@ -1,0 +1,18 @@
+<div class="container">
+    <button type="button" class="button" routerLink="/createPlayer">Añadir Jugador</button>
+</div>
+
+<div class="container" *ngIf="playersList">
+    <div class="card">
+        <div class="card-item" *ngFor="let player of playersList">
+            <img class="card-photo" src={{player.photo}} alt={{player.nickname}}>
+            <div class="card-info">
+                <h3 class="card-info__nickname">{{player.nickname}}</h3>
+                <p class="card-info__name"><span>NOMBRE: </span>{{player.name}}</p>
+                <p class="card-info__points"><span>WPT POINTS: </span><em>{{player.points}}</em></p>
+                <button type="button" class="card-info__button" routerLink="/players/{{player.id}}"> + </button>
+            </div>
+        </div>
+    </div>
+</div>
+

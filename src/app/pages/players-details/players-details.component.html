@@ -1,0 +1,17 @@
+<div class="container" *ngIf="playerData">
+    <img class="card-photo" src={{playerData.photo}} alt={{playerData.nickname}}>
+    <div class="card">
+        <div class="card-info1">
+            <h3 class="card-info__nickname">{{playerData.nickname}}</h3>
+            <p class="card-info__name"><span>NOMBRE: </span>{{playerData.name}}</p>
+            <p class="card-info__name"><span>JUGADOR DE: </span>{{playerData.position}}</p>
+            <p class="card-info__points"><span>WPT POINTS: </span><em>{{playerData.points}}</em></p>
+        </div>
+        <div class="card-info2">
+            <p class="card-info__name"><span>FECHA DE NACIMIENTO: </span>{{playerData.birthDate}}</p>
+            <p class="card-info__name"><span>ALTURA: </span>{{playerData.height}}m</p>
+            <p class="card-info__name"><span>LUGAR DE NACIMIENTO: </span>{{playerData.birthPlace}}</p>
+            <p class="card-info__name"><span>PAÍS: </span>{{playerData.country}}</p>
+        </div>
+    </div>
+</div>
